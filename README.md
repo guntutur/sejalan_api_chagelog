@@ -1,2 +1,2 @@
-# sejalan_api_chagelog
-Sejalan API Changelog, Since Phase 2
+# Sejalan API Change Log
+Since Phase 2
