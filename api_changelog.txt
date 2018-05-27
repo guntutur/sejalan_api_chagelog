@@ -1,0 +1,83 @@
+Since 13-05-2018
+
+PERUBAHAN PADA ENDPOINT :
+PROFILE CONTROLLER
+- profile/get
+	- perubahan pada field driving_license_photo, yang pada awalnya bertipe data string, diubah menjadi default list of object key value pair dengan format [{"type":"A","image":"url_image"},{"type":"B","image":"url_image"}]
+- profile/update/user-car/{id}
+	- penambahan multipart file upload dengan key interior, eksterior dan kir (tidak mandatory, diisi jika vehicle_type adalah 1) 
+
+REGISTRATION CONTROLLER
+- registration/save
+	- penambahan field perusahaan_otomotif pada class model MapBasicRegistration, bersifat tidak mandatory, diisi jika user mendaftar sebagai supir bus
+- registration/save-car-all
+	- penambahan field "vehicle_type" pada data, dengan isian 0 untuk car, 1 untuk bus
+	- penambahan multipart file upload dengan key interior, eksterior dan kir (tidak mandatory, diisi jika vehicle_type adalah 1)
+- registration/upgrade-to-vo
+	- penambahan field "vehicle_type" pada data, dengan isian 0 untuk car, 1 untuk bus
+	- penambahan multipart file upload dengan key interior, eksterior dan kir (tidak mandatory, diisi jika vehicle_type adalah 1)
+- registration/upload-sim/{type}
+	- perubahan endpoint upload-sim dengan parameter path variable {type} yang bersifat mandatory, diisi dengan lower case 'a' untuk car, atau 'b' untuk bus
+
+
+since 19-05-2018
+
+PERUBAHAN PADA ENDPOINT : 
+PROFILE CONTROLLER
+- profile/get
+	- penambahan field sim_id di dalam list of object diriving_license_photo
+
+- REGISTRATION CONTROLLER
+- registration/save-car-all
+	- default validation_status pada user_car di set ke 'PENDING'
+- registration/updgrade-to-vo
+	- default validation_status pada user_car di set ke 'PENDING'
+
+since 21-05-2018
+PERUBAHAN PADA ENDPOINT
+MASTER CONTROLLER
+- master/variants-by-brand/{brand-id}
+	- penambahan request parameter dengan key 'type', bersifat tidak mandatory, dengan value yang memungkinkan untuk di set sebagai berikut : 0 untuk mobil, 1 untuk bus, 2 untuk motor
+
+since 24-05-2018
+PERUBAHAN PADA ENDPOINT
+REGISTRATION CONTROLLER
+- registration/save-car-all
+	- penambahan field 'mastersize' jika vehicle_type == 1, dengan value yang memungkinkan untuk di set sebagai berikut 'Besar', 'Sedang', atau 'Kecil'
+- registration/updgrade-to-vo
+	- penambahan field 'mastersize' jika vehicle_type == 1, dengan value yang memungkinkan untuk di set sebagai berikut 'Besar', 'Sedang', atau 'Kecil'
+
+PROFILE CONTROLLER
+- profile/update/user-car/{id}
+	- penambahan field 'mastersize' jika vehicle_type == 1, dengan value yang memungkinkan untuk di set sebagai berikut 'Besar', 'Sedang', atau 'Kecil'
+	- penambahan multipart file upload dengan key interior, eksterior dan kir (tidak mandatory, diisi jika vehicle_type adalah 1) 
+
+since 26-05-2018
+PERUBAHAN PADA ENDPOINT
+VO CONTROLLER
+- vo/create-trip
+	- penambahan field 'num_seat_bus' bertipe integer, jika trip yang dibuat adalah untuk bus
+	- response berhasil dari vo/create-trip akan mengembalikan tambahan field 'vehicle_type' integer pada data json
+
+since 27-05-2018
+PERUBAHAN PADA ENDPOINT
+VO CONTROLLER
+- vo/list-next-trip
+	- penambahan field 'vehicle_type' bertipe integer pada response data, untuk membedakan jenis kendaraan
+- vo/list-history
+	- penambahan field 'vehicle_type' bertipe integer pada response data, untuk membedakan jenis kendaraan
+
+PENAMBAHAN ENDPOINT
+MASTER CONTROLLER
+- master/mastersize
+	- http method post dengan header parameter api_key
+
+since 28-05-2018
+PERUBAHAN PADA ENDPOINT
+VO CONTROLLER
+- vo/create-trip
+	- penambahan field 'num_available_seat_bus' bertipe integer, sebagai keterangan jumlah seat bus yang masih tersedia, secara default, akan terisi sama dengan num_seat_bus yang disubmit karena data baru dibuat dan tidak dimungkinkan nilainya berbeda (hanya sebagai informasi)
+- vo/list-next-trip
+	- penambahan field 'num_available_seat_bus' bertipe integer, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
+- vo/list-history
+	- - penambahan field 'num_available_seat_bus' bertipe integer, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
