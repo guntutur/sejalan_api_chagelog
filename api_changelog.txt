@@ -27,7 +27,7 @@ PROFILE CONTROLLER
 - profile/get
 	- penambahan field sim_id di dalam list of object diriving_license_photo
 
-- REGISTRATION CONTROLLER
+REGISTRATION CONTROLLER
 - registration/save-car-all
 	- default validation_status pada user_car di set ke 'PENDING'
 - registration/updgrade-to-vo
@@ -56,7 +56,7 @@ since 26-05-2018
 PERUBAHAN PADA ENDPOINT
 VO CONTROLLER
 - vo/create-trip
-	- penambahan field 'num_seat_bus' bertipe integer, jika trip yang dibuat adalah untuk mobil, field ini dikirim dengan value null. jika trip untuk bus num_seat diisi dan available_seat diisi null
+	- penambahan field 'num_seat_bus' bertipe integer, jika trip yang dibuat adalah untuk mobil, field ini dikirim dengan value null. jika trip untuk bus num_seat dan available_seat diisi null
 	- response berhasil dari vo/create-trip akan mengembalikan tambahan field 'vehicle_type' integer pada data json
 
 since 27-05-2018
