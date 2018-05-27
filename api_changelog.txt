@@ -56,7 +56,7 @@ since 26-05-2018
 PERUBAHAN PADA ENDPOINT
 VO CONTROLLER
 - vo/create-trip
-	- penambahan field 'num_seat_bus' bertipe integer, jika trip yang dibuat adalah untuk bus
+	- penambahan field 'num_seat_bus' bertipe integer, jika trip yang dibuat adalah untuk mobil, field ini dikirim dengan value null. jika trip untuk bus num_seat diisi dan available_seat diisi null
 	- response berhasil dari vo/create-trip akan mengembalikan tambahan field 'vehicle_type' integer pada data json
 
 since 27-05-2018
@@ -70,14 +70,14 @@ VO CONTROLLER
 PENAMBAHAN ENDPOINT
 MASTER CONTROLLER
 - master/mastersize
-	- http method post dengan header parameter api_key
+	- penambahan endpoint untuk retrieve data mastersize bus, http method post dengan header parameter api_key
 
 since 28-05-2018
 PERUBAHAN PADA ENDPOINT
 VO CONTROLLER
 - vo/create-trip
-	- penambahan field 'num_available_seat_bus' bertipe integer, sebagai keterangan jumlah seat bus yang masih tersedia, secara default, akan terisi sama dengan num_seat_bus yang disubmit karena data baru dibuat dan tidak dimungkinkan nilainya berbeda (hanya sebagai informasi)
+	- penambahan field 'num_available_seat_bus' bertipe integer pada response data, sebagai keterangan jumlah seat bus yang masih tersedia, secara default, akan terisi sama dengan num_seat_bus yang disubmit karena data baru dibuat dan tidak dimungkinkan nilainya berbeda (hanya sebagai informasi)
 - vo/list-next-trip
-	- penambahan field 'num_available_seat_bus' bertipe integer, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
+	- penambahan field 'num_available_seat_bus' bertipe integer pada response data, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
 - vo/list-history
-	- - penambahan field 'num_available_seat_bus' bertipe integer, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
+	- - penambahan field 'num_available_seat_bus' bertipe integer pada response data, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
