@@ -87,3 +87,9 @@ PERUBAHAN PADA ENDPOINT
 RIDER CONTROLLER
 - rider/join-trip
 	- penambahan field 'seat_bus' bertipe integer pada request data, berisi jumlah kursi yang akan dibeli oleh teman
+
+since 31-05-2018
+PERUBAHAN PADA ENDPOINT
+VO CONTROLLER
+- vo/edit-trip/{id}
+	- penambahan field 'disabled_seat' bertipe string comma separated value (sama seperti available_seat) diisi seat yang akan di edit untuk tidak dijual (disabled) dan field 'disabled_seat_bus' bertipe integer diisi dengan jumlah kursi bus yang akan di edit untuk tidak dijual. jika edit trip bus, 'disabled_seat' dapat diisi null, dan field 'riders' dapat diisi array kosong ([], tidak null). jika edit trip mobil, 'disabled_seat_bus' dapat diisi null
