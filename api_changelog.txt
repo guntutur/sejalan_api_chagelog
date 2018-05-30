@@ -56,7 +56,7 @@ since 26-05-2018
 PERUBAHAN PADA ENDPOINT
 VO CONTROLLER
 - vo/create-trip
-	- penambahan field 'num_seat_bus' bertipe integer, jika trip yang dibuat adalah untuk mobil, field ini dikirim dengan value null. jika trip untuk bus num_seat dan available_seat diisi null
+	- penambahan field 'num_seat_bus' bertipe integer untuk jumlah anuan, jika trip yang dibuat adalah untuk mobil, field ini dikirim dengan value null. jika trip untuk bus num_seat dan available_seat diisi null
 	- response berhasil dari vo/create-trip akan mengembalikan tambahan field 'vehicle_type' integer pada data json
 
 since 27-05-2018
@@ -81,3 +81,9 @@ VO CONTROLLER
 	- penambahan field 'num_available_seat_bus' bertipe integer pada response data, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
 - vo/list-history
 	- - penambahan field 'num_available_seat_bus' bertipe integer pada response data, sebagai keterangan jumlah seat bus yang masih tersedia, nilainya akan selalu sama dengan (num_seat_bus - num_approved)
+
+since 29-05-2018
+PERUBAHAN PADA ENDPOINT
+RIDER CONTROLLER
+- rider/join-trip
+	- penambahan field 'seat_bus' bertipe integer pada request data, berisi jumlah kursi yang akan dibeli oleh teman
