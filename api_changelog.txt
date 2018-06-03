@@ -104,3 +104,5 @@ PERUBAHAN PADA ENDPOINT
 RIDER CONTROLLER
 - rider/search-trip
 	- penambahan field 'location_status' bertipe string pada response data, berisi 'exact' atau 'nearest' sebagai flag lokasi, penambahan field 'radius' bertipe float berisi satuan jarak dalam meter
+- rider/search-trip-by-code/{code}
+	- penambahan field 'location_status' bertipe string pada response data, berisi 'exact' atau 'nearest' sebagai flag lokasi, penambahan field 'radius' bertipe float berisi satuan jarak dalam meter, pada endpoint ini, nilai dari location_status dan radius akan selalu null karena endpoint hanya mengirimkan code tanpa lokasi yang dituju
