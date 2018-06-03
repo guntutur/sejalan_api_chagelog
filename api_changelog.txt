@@ -98,3 +98,9 @@ PENAMBAHAN PADA ENDPOINT
 VO CONTROLLER
 - vo/delay-trip/{tripId}
 	- bodyrequest MapDelayTrip berisi field 'delay_time' bertipe integer (sesuai srs dapat diisi 15,30,45 atau 60) mandatory, dan field 'note' bertipe string sebagai tambahan informasi alasan trip di delay.
+
+since 03-06-2018
+PERUBAHAN PADA ENDPOINT
+RIDER CONTROLLER
+- rider/search-trip
+	- penambahan field 'location_status' bertipe string pada response data, berisi 'exact' atau 'nearest' sebagai flag lokasi, penambahan field 'radius' bertipe float berisi satuan jarak dalam meter
