@@ -106,3 +106,9 @@ RIDER CONTROLLER
 	- penambahan field 'location_status' bertipe string pada response data, berisi 'exact' atau 'nearest' sebagai flag lokasi, penambahan field 'radius' bertipe float berisi satuan jarak dalam meter
 - rider/search-trip-by-code/{code}
 	- penambahan field 'location_status' bertipe string pada response data, berisi 'exact' atau 'nearest' sebagai flag lokasi, penambahan field 'radius' bertipe float berisi satuan jarak dalam meter, pada endpoint ini, nilai dari location_status dan radius akan selalu null karena endpoint hanya mengirimkan code tanpa lokasi yang dituju
+
+since 04-06-2018
+PERUBAHAN PADA ENDPOINT
+MASTER CONTROLLER
+- master/brand
+	- penambahan request parameter dengan key 'type', bersifat tidak mandatory, dengan value yang memungkinkan untuk di set sebagai berikut : 0 untuk mobil, 1 untuk bus, 2 untuk motor
